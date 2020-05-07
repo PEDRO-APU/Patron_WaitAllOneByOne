@@ -1,0 +1,2 @@
+# Patron_WaitAllOneByOne
+Demostración patrón WaitAllOneByOne
