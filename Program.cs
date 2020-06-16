@@ -20,10 +20,11 @@ namespace WaitAllOneByOne
             {
                 foreach (KeyValuePair<string, string> par in lista)
                 {
-                    Task<Boolean> t = Task.Factory.StartNew<Boolean>(() =>
+                    Task<Boolean> t = Task.Factory.StartNew<Boolean>((param) =>
                     {
-                        return Tarea.estado(par.Key);
-                    });
+                        string ip = (string)param;
+                        return Tarea.estado(ip);
+                    },par);
                     tareas.Add(t);
                 }
             }catch(AggregateException e)
